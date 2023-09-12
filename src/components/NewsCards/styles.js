@@ -9,35 +9,20 @@ export default makeStyles({
   media: {
     height: 250,
   },
-  border: {
-    border: 'solid',
-  },
-  fullHeightCard: {
-    height: '100%',
-  },
   card: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    borderBottom: '10px solid white',
+    alignItems: 'center',
+    width: '100%',
+    height: '45vh',
+    padding: '10%',
+    borderRadius: 10,
+    color: 'white'
   },
-  activeCard: {
-    borderBottom: '10px solid #22289a',
-  },
-  grid: {
+  infoCard: {
     display: 'flex',
-  },
-  details: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    margin: '20px',
-  },
-  title: {
-    padding: '0 16px',
-  },
-  cardActions: {
-    padding: '0 16px 8px 16px',
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
+    flexDirection: 'column',
+    textAlign: 'center',
+  }
 });
