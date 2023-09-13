@@ -8,6 +8,7 @@ const alanKey = 'cd452736e273b971183dc4aef83d8af12e956eca572e1d8b807a3e2338fdd0d
 
 const App = () => {
     const [newsArticles, setNewsArticles] = useState([]);
+    const [activeArticle, setActiveArticle] = useState(-1);
     const classes = useStyles();
 
     useEffect(() => {
@@ -15,7 +16,10 @@ const App = () => {
             key: alanKey,
             onCommand: ({ command, articles }) => {
                 if(command === 'newHeadlines') {
-                    setNewsArticles(articles)
+                    setNewsArticles(articles);
+                    setActiveArticle(-1);
+                } else if(command === 'highlight') {
+                    setActiveArticle((prevArticle) => prevArticle + 1);
                 }
             }
         })
@@ -27,7 +31,7 @@ const App = () => {
             <div className={classes.logoContainer}>
                 <img src="https://www.dits.center/images/picture13_1.jpg" className={classes.alanLogo} alt="Heading" />
             </div>
-            <NewsCards articles={newsArticles} />
+            <NewsCards articles={newsArticles} activeArticle={activeArticle} />
         </div>
     )
 }
